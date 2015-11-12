@@ -23,8 +23,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button btn = (Button)findViewById(R.id.button);
-        btn.setOnClickListener(this);
+        Button btn1 = (Button)findViewById(R.id.button);
+        Button btn2 = (Button)findViewById(R.id.keepbtn1);
+
+        btn1.setOnClickListener(this);
+        btn2.setOnClickListener(this);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -60,9 +63,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Log.d("MSG", "Button1 Pushed");
-        Intent i = new Intent(this, Main2Activity.class);
-        startActivity(i);
 
+        switch (v.getId()){
+            case R.id.button:
+                Log.d("MSG", "Button1 Pushed");
+                Intent i = new Intent(this, Main2Activity.class);
+                startActivity(i);
+                break;
+
+            case R.id.keepbtn1:
+                Log.d("MSG", "This Activity is keeping.");
+                Toast.makeText(this, "This Activity is keeping.", Toast.LENGTH_SHORT).show();
+                break;
+
+        }
     }
 }
