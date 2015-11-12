@@ -1,5 +1,12 @@
 apply plugin: 'com.android.application'
 
+repositories {
+    jcenter {
+        url "http://jcenter.bintray.com/"
+    }
+}
+
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
